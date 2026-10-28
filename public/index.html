@@ -1,0 +1,117 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Interactive educational symptom checker">
+  <title>Symptom Checker</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">+</span>
+      <span>HealthCheck</span>
+    </div>
+    <nav>
+      <a href="#checker">Symptom Checker</a>
+      <a href="#how">How it works</a>
+      <a href="#safety">Safety</a>
+    </nav>
+    <button class="outline-btn" id="resetTop">Start Over</button>
+  </header>
+
+  <main id="checker">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">SYMPTOM CHECKER</span>
+        <h1>What symptoms are you experiencing?</h1>
+        <p>Select a body area or search for a symptom. You can select multiple symptoms before reviewing the educational results.</p>
+      </div>
+      <div class="notice">
+        <strong>Important</strong>
+        <span>This tool is educational and does not diagnose illness or replace a healthcare professional.</span>
+      </div>
+    </section>
+
+    <section class="checker-shell">
+      <aside class="steps">
+        <div class="step active"><span>1</span><div><b>Choose symptoms</b><small>Body area or search</small></div></div>
+        <div class="step"><span>2</span><div><b>Review selection</b><small>Multiple symptoms</small></div></div>
+        <div class="step"><span>3</span><div><b>Educational results</b><small>Possible categories</small></div></div>
+      </aside>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <span class="eyebrow">STEP 1</span>
+            <h2>Choose a body area</h2>
+          </div>
+          <div class="selected-count"><span id="selectedCount">0</span> selected</div>
+        </div>
+
+        <div class="body-map">
+          <button class="body-part head" data-area="head" aria-label="Head">Head</button>
+          <button class="body-part chest" data-area="chest" aria-label="Chest">Chest</button>
+          <button class="body-part abdomen" data-area="abdomen" aria-label="Abdomen">Abdomen</button>
+          <button class="body-part back" data-area="back" aria-label="Back">Back</button>
+          <button class="body-part whole" data-area="whole" aria-label="Whole body">Whole body</button>
+        </div>
+
+        <div class="search-wrap">
+          <label for="search">Search symptoms</label>
+          <div class="search-box"><span>&#128269;</span><input id="search" placeholder="e.g. headache, cough, nausea">
+          </div>
+        </div>
+
+        <div class="results-head">
+          <h3>Symptoms</h3>
+          <button class="text-btn" id="clearArea">Clear filter</button>
+        </div>
+        <div id="symptoms" class="symptoms-grid"></div>
+
+        <div class="selection">
+          <div>
+            <span class="eyebrow">YOUR SELECTION</span>
+            <div id="selectedSymptoms" class="chips">
+              <span class="empty">No symptoms selected yet.</span>
+            </div>
+          </div>
+          <button class="primary-btn" id="checkBtn" disabled>Review results &rarr;</button>
+        </div>
+      </section>
+    </section>
+
+    <section id="resultsSection" class="results-section hidden">
+      <div class="panel">
+        <div class="panel-head">
+          <div>
+            <span class="eyebrow">STEP 3</span>
+            <h2>Educational results</h2>
+          </div>
+          <button class="outline-btn" id="resetResults">Start Over</button>
+        </div>
+        <div id="results"></div>
+      </div>
+    </section>
+
+    <section id="how" class="info-grid">
+      <article><span>01</span><h3>Select symptoms</h3><p>Use the body-area controls or search to find symptoms and select more than one.</p></article>
+      <article><span>02</span><h3>Review</h3><p>Check the symptoms you selected before continuing.</p></article>
+      <article><span>03</span><h3>Learn</h3><p>Review broad educational categories that can overlap with symptom combinations.</p></article>
+    </section>
+
+    <section id="safety" class="safety">
+      <h2>When to seek urgent help</h2>
+      <p>If someone has severe or rapidly worsening symptoms, trouble breathing, severe chest pain, loss of consciousness, or another emergency, seek urgent medical care or contact your local emergency service.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand"><span class="brand-mark">+</span><span>HealthCheck</span></div>
+    <p>Educational demonstration &mdash; not a medical diagnostic service.</p>
+  </footer>
+
+<script src="/app.js"></script>
+</body>
+</html>
